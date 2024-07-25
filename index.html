@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media print {
+            @page {
+                size: A4; 
+                margin: 1in; 
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 210mm; 
+            height: 297mm; 
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            overflow: auto;
+            position: relative;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            flex: 1;
+        }
+        .text-container {
+            flex: 1;
+            text-align: right;
+        }
+        .black-band {
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .black-band span {
+            margin: 0 15px;
+        }
+        .images-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .images-row img {
+            width: 30%;
+            height: auto;
+        }
+        .characteristics-band {
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .info-band {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .info-band.description {
+            background-color: black;
+            width: 60%;
+            margin-right: 10px;
+        }
+        .info-band.equipment {
+            background-color: black;
+            width: 35%;
+        }
+        .additional-paragraph {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .fixed-image {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 90px;
+            height: auto;
+            margin: 10px;
+        }
+        .circle {
+            position: absolute;
+            left: 50%;
+            bottom: 80px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .circle-text {
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            bottom: 40px;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="image-container">
+                <img src="images.png" alt="Image1" style="width: 100px; height: auto;">
+            </div>
+            <div class="text-container">
+                <p style="margin: 0;">
+                    Ceci est un paragraphe placé à la proximité droite en haut de la page. 
+                </p>
+            </div>
+        </div>
+        <div class="black-band">
+            <span class="brand">Rio Yachts</span>
+            <span class="model">58</span>
+            <span class="type">coupe sport</span>
+        </div>
+        <div class="images-row">
+            <img src="1.png" alt="Image2">
+            <img src="3.jpg" alt="Image3">
+            <img src="4.jpg" alt="Image4">
+        </div>
+        <div class="characteristics-band">
+            Caractéristiques
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>État</th>
+                    <th>Largeur</th>
+                    <th>500</th>
+                    <th>2</th>
+                    <th>Énergie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Neuf</td>
+                    <td>5.45</td>
+                    <td></td>
+                    <td></td>
+                    <td>Neuf</td>
+                </tr>
+                <tr>
+                    <td>Bon état</td>
+                    <td>4.30</td>
+                    <td>300</td>
+                    <td>1</td>
+                    <td>Bon</td>
+                </tr>
+                <tr>
+                    <td>Usé</td>
+                    <td>6.00</td>
+                    <td>600</td>
+                    <td>3</td>
+                    <td>Reconditionné</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="info-container">
+            <div class="info-band description">
+                Description
+            </div>
+            <div class="info-band equipment">
+                Équipement
+            </div>
+        </div>
+        <div class="additional-paragraph">
+            <p>
+                Voici un paragraphe ajouté sous les sections "Description" et "Équipement". 
+                Vous pouvez y ajouter des informations supplémentaires, des détails ou des 
+                explications sur les éléments présentés ci-dessus. Assurez-vous que le texte 
+                est bien formaté et lisible pour offrir une meilleure expérience utilisateur.
+                Voici un paragraphe ajouté sous les sections "Description" et "Équipement". 
+                Vous pouvez y ajouter des informations supplémentaires, des détails ou des 
+                explications sur les éléments présentés ci-dessus. Assurez-vous que le texte 
+                est bien formaté et lisible pour offrir une meilleure expérience utilisateur.
+                Voici un paragraphe ajouté sous les sections "Description" et "Équipement". 
+                Vous pouvez y ajouter des informations supplémentaires, des détails ou des 
+                explications sur les éléments présentés ci-dessus. Assurez-vous que le texte 
+                est bien formaté et lisible pour offrir une meilleure expérience utilisateur.
+            </p>
+        </div>
+        <img src="5.jpeg" alt="Image5" class="fixed-image">
+        <div class="circle">A</div>
+        <div class="circle-text">Texte sous le cercle Texte sous le cercleTexte sous le cercleTexte sous le cercle</div>
+    </div>
+</body>
+</html>
